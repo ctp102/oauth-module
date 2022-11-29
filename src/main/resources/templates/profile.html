@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>마이페이지</title>
+</head>
+<body>
+    <div th:text="|accessToken: ${kakaoOauthTokenDomain.accessToken}|"></div>
+    <div th:text="|refreshToken: ${kakaoOauthTokenDomain.refreshToken}|"></div>
+    <div th:text="|expiresIn: ${kakaoOauthTokenDomain.expiresIn}|"></div>
+    <div th:text="|refreshTokenExpiresIn: ${kakaoOauthTokenDomain.refreshTokenExpiresIn}|"></div>
+    <div th:text="|idToken: ${kakaoOauthTokenDomain.idToken}|"></div>
+    <div th:text="|scope: ${kakaoOauthTokenDomain.scope}|"></div>
+</body>
+</html>
