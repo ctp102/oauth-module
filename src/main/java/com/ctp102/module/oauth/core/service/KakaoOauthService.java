@@ -1,8 +1,9 @@
 package com.ctp102.module.oauth.core.service;
 
 import com.ctp102.module.oauth.core.KakaoRestClient;
+import com.ctp102.module.oauth.core.domain.KakaoOauthResponse;
 import com.ctp102.module.oauth.core.domain.KakaoOauthTokenDomain;
-import com.ctp102.module.oauth.core.domain.KakaoOauthTokenResponse;
+import com.ctp102.module.oauth.core.domain.KakaoUserDomain;
 import com.ctp102.module.oauth.core.form.KakaoOauthTokenForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +34,12 @@ public class KakaoOauthService {
     }
 
     public KakaoOauthTokenDomain getOauthInfo(KakaoOauthTokenForm kakaoOauthTokenForm) {
-        KakaoOauthTokenResponse<KakaoOauthTokenDomain> oauthTokenResponse = kakaoRestClient.getOauthInfo(kakaoOauthTokenForm);
+        KakaoOauthResponse<KakaoOauthTokenDomain> oauthTokenResponse = kakaoRestClient.getOauthInfo(kakaoOauthTokenForm);
         return oauthTokenResponse.getData();
+    }
+
+    public KakaoUserDomain getUser(String accessToken) {
+        KakaoOauthResponse<KakaoUserDomain> kakaoUserDomain = kakaoRestClient.getUser(accessToken);
+        return kakaoUserDomain.getData();
     }
 }

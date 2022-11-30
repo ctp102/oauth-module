@@ -1,7 +1,9 @@
 package com.ctp102.module.oauth.controller;
 
+import com.ctp102.module.oauth.commons.RestResponse;
 import com.ctp102.module.oauth.core.domain.KakaoOauthAuthorizeResponseDomain;
 import com.ctp102.module.oauth.core.domain.KakaoOauthTokenDomain;
+import com.ctp102.module.oauth.core.domain.KakaoUserDomain;
 import com.ctp102.module.oauth.core.enums.PlatformTypes;
 import com.ctp102.module.oauth.core.form.KakaoOauthTokenForm;
 import com.ctp102.module.oauth.core.service.GoogleOauthService;
@@ -16,6 +18,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @Slf4j
@@ -55,6 +59,22 @@ public class OauthController {
             model.addAttribute("kakaoOauthTokenDomain", kakaoOauthTokenDomain);
         }
         return "profile";
+    }
+
+//    @GetMapping("oauth/kakao/user")
+//    @ResponseBody
+//    public RestResponse<Map<String, Object>> getUser(HttpServletRequest request, HttpServletResponse response, @RequestParam(name = "accessToken") String accessToken) {
+//        KakaoUserDomain kakaoUserDomain = kakaoOauthService.getUser(accessToken);
+//        RestResponse<Map<String, Object>> build = new RestResponse.Builder().addItems(kakaoUserDomain).build();
+//        return build;
+//    }
+
+    @GetMapping("oauth/kakao/user")
+    @ResponseBody
+    public RestResponse getUser(HttpServletRequest request, HttpServletResponse response, @RequestParam(name = "accessToken") String accessToken) {
+        KakaoUserDomain kakaoUserDomain = kakaoOauthService.getUser(accessToken);
+        RestResponse build = new RestResponse.Builder().addItems(kakaoUserDomain).build();
+        return build;
     }
 
     @GetMapping("/oauth/google/authorize")
