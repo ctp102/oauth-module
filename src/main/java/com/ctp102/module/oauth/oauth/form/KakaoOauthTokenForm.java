@@ -1,4 +1,4 @@
-package com.ctp102.module.oauth.core.form;
+package com.ctp102.module.oauth.oauth.form;
 
 import lombok.Data;
 

@@ -1,10 +1,10 @@
-package com.ctp102.module.oauth.core.service;
+package com.ctp102.module.oauth.oauth.service;
 
-import com.ctp102.module.oauth.core.KakaoRestClient;
-import com.ctp102.module.oauth.core.domain.KakaoOauthResponse;
-import com.ctp102.module.oauth.core.domain.KakaoOauthTokenDomain;
-import com.ctp102.module.oauth.core.domain.KakaoUserDomain;
-import com.ctp102.module.oauth.core.form.KakaoOauthTokenForm;
+import com.ctp102.module.oauth.oauth.KakaoRestClient;
+import com.ctp102.module.oauth.oauth.domain.KakaoOauthResponse;
+import com.ctp102.module.oauth.oauth.domain.KakaoOauthTokenDomain;
+import com.ctp102.module.oauth.oauth.domain.KakaoUserDomain;
+import com.ctp102.module.oauth.oauth.form.KakaoOauthTokenForm;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

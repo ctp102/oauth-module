@@ -1,4 +1,4 @@
-package com.ctp102.module.oauth.core.enums;
+package com.ctp102.module.oauth.oauth.enums;
 
 import lombok.Getter;
 

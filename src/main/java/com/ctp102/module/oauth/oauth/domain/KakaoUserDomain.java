@@ -1,6 +1,6 @@
-package com.ctp102.module.oauth.core.domain;
+package com.ctp102.module.oauth.oauth.domain;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import lombok.Data;
  * https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#req-user-info-response
  */
 @Data
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class KakaoUserDomain {
 
     private long id; // 회원번호
@@ -16,16 +16,16 @@ public class KakaoUserDomain {
     private Properties properties;
     private KakaoAccount kakaoAccount;
 
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Data
+    @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
     public static class Properties {
         private String nickname;
         private String profileImage;
         private String thumbnailImage;
     }
 
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Data
+    @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
     public static class KakaoAccount {
         private boolean profileNicknameNeedsAgreement;
         private boolean profileImageNeedsAgreement;
@@ -46,8 +46,8 @@ public class KakaoUserDomain {
         private boolean genderNeedsAgreement;
         private String gender; // ex) male
 
-        @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
         @Data
+        @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
         public static class Profile {
             private String nickname;
             private String thumbnailImageUrl;

@@ -1,11 +1,11 @@
-package com.ctp102.module.oauth.core.domain;
+package com.ctp102.module.oauth.oauth.domain;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
 @Data
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class KakaoOauthAuthorizeResponseDomain {
 
     private String code; // 사용자가 [동의하고 계속하기] 선택, 로그인 진행하는 경우

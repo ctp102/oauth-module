@@ -1,4 +1,4 @@
-package com.ctp102.module.oauth.core.domain;
+package com.ctp102.module.oauth.oauth.domain;
 
 import lombok.Data;
 

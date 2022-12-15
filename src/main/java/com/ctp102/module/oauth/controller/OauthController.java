@@ -1,14 +1,14 @@
 package com.ctp102.module.oauth.controller;
 
 import com.ctp102.module.oauth.commons.RestResponse;
-import com.ctp102.module.oauth.core.domain.KakaoOauthAuthorizeResponseDomain;
-import com.ctp102.module.oauth.core.domain.KakaoOauthTokenDomain;
-import com.ctp102.module.oauth.core.domain.KakaoUserDomain;
-import com.ctp102.module.oauth.core.enums.PlatformTypes;
-import com.ctp102.module.oauth.core.form.KakaoOauthTokenForm;
-import com.ctp102.module.oauth.core.service.GoogleOauthService;
-import com.ctp102.module.oauth.core.service.KakaoOauthService;
-import com.ctp102.module.oauth.core.service.NaverOauthService;
+import com.ctp102.module.oauth.oauth.domain.KakaoOauthAuthorizeResponseDomain;
+import com.ctp102.module.oauth.oauth.domain.KakaoOauthTokenDomain;
+import com.ctp102.module.oauth.oauth.domain.KakaoUserDomain;
+import com.ctp102.module.oauth.oauth.enums.PlatformTypes;
+import com.ctp102.module.oauth.oauth.form.KakaoOauthTokenForm;
+import com.ctp102.module.oauth.oauth.service.GoogleOauthService;
+import com.ctp102.module.oauth.oauth.service.KakaoOauthService;
+import com.ctp102.module.oauth.oauth.service.NaverOauthService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -61,20 +61,12 @@ public class OauthController {
         return "profile";
     }
 
-//    @GetMapping("oauth/kakao/user")
-//    @ResponseBody
-//    public RestResponse<Map<String, Object>> getUser(HttpServletRequest request, HttpServletResponse response, @RequestParam(name = "accessToken") String accessToken) {
-//        KakaoUserDomain kakaoUserDomain = kakaoOauthService.getUser(accessToken);
-//        RestResponse<Map<String, Object>> build = new RestResponse.Builder().addItems(kakaoUserDomain).build();
-//        return build;
-//    }
-
     @GetMapping("oauth/kakao/user")
     @ResponseBody
     public RestResponse getUser(HttpServletRequest request, HttpServletResponse response, @RequestParam(name = "accessToken") String accessToken) {
         KakaoUserDomain kakaoUserDomain = kakaoOauthService.getUser(accessToken);
-        RestResponse build = new RestResponse.Builder().addItems(kakaoUserDomain).build();
-        return build;
+        // TODO: [2022-11-30] api 호출 시 그대로 snake_case로 전달되는 이슈... 음..
+        return new RestResponse.Builder().addItems(kakaoUserDomain).build();
     }
 
     @GetMapping("/oauth/google/authorize")

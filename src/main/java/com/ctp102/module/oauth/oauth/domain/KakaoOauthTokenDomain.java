@@ -1,6 +1,6 @@
-package com.ctp102.module.oauth.core.domain;
+package com.ctp102.module.oauth.oauth.domain;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import lombok.Data;
  * https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#request-token-response
  */
 @Data
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class KakaoOauthTokenDomain {
 
     // required

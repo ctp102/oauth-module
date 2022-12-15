@@ -1,8 +1,8 @@
-package com.ctp102.module.oauth.kakao;
+package com.ctp102.module.oauth.oauth.kakao;
 
 import com.ctp102.module.oauth.CommonTest;
-import com.ctp102.module.oauth.core.KakaoRestClient;
-import com.ctp102.module.oauth.core.service.KakaoOauthService;
+import com.ctp102.module.oauth.oauth.KakaoRestClient;
+import com.ctp102.module.oauth.oauth.service.KakaoOauthService;
 import groovy.util.logging.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

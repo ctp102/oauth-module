@@ -1,10 +1,10 @@
-package com.ctp102.module.oauth.core;
+package com.ctp102.module.oauth.oauth;
 
 import com.ctp102.module.oauth.config.properties.KakaoOauthConfig;
-import com.ctp102.module.oauth.core.domain.KakaoOauthTokenDomain;
-import com.ctp102.module.oauth.core.domain.KakaoOauthResponse;
-import com.ctp102.module.oauth.core.domain.KakaoUserDomain;
-import com.ctp102.module.oauth.core.form.KakaoOauthTokenForm;
+import com.ctp102.module.oauth.oauth.domain.KakaoOauthTokenDomain;
+import com.ctp102.module.oauth.oauth.domain.KakaoOauthResponse;
+import com.ctp102.module.oauth.oauth.domain.KakaoUserDomain;
+import com.ctp102.module.oauth.oauth.form.KakaoOauthTokenForm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
 import lombok.Getter;
