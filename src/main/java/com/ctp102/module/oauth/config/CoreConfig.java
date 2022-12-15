@@ -1,5 +1,7 @@
-package com.ctp102.module.oauth.config.properties;
+package com.ctp102.module.oauth.config;
 
+import com.ctp102.module.oauth.config.properties.KakaoOauthConfig;
+import com.ctp102.module.oauth.config.properties.RestTemplateConfig;
 import com.ctp102.module.oauth.oauth.KakaoRestClient;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
